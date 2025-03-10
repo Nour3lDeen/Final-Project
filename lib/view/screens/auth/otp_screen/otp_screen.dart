@@ -99,7 +99,7 @@ class OtpScreen extends StatelessWidget {
                                 }
                               },
                               child: TextBody14(
-                                'Resend Code',
+                                'Resend Otp Code',
                                 color: cubit.canResendOtp
                                     ? AppColors.primaryColor
                                     : AppColors.grey,

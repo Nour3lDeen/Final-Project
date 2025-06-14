@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TextTitle extends StatelessWidget {
   const TextTitle(
-      this.text, {
-        super.key,
-        this.textAlign,
-        this.fontSize,
-        this.fontWeight,
-        this.color,
-        this.overflow,
-      });
+    this.text, {
+    super.key,
+    this.textAlign,
+    this.fontSize,
+    this.fontWeight,
+    this.color,
+    this.overflow,
+  });
 
   final String text;
   final FontWeight? fontWeight;
@@ -31,21 +31,20 @@ class TextTitle extends StatelessWidget {
       ),
       textAlign: textAlign ?? TextAlign.start,
       overflow: overflow,
-
     );
   }
 }
 
 class TextBody14 extends StatelessWidget {
   const TextBody14(
-      this.text, {
-        super.key,
-        this.textAlign,
-        this.fontSize,
-        this.fontWeight,
-        this.color,
-        this.overflow,
-      });
+    this.text, {
+    super.key,
+    this.textAlign,
+    this.fontSize,
+    this.fontWeight,
+    this.color,
+    this.overflow,
+  });
 
   final String text;
   final FontWeight? fontWeight;
@@ -72,14 +71,14 @@ class TextBody14 extends StatelessWidget {
 
 class TextBody12 extends StatelessWidget {
   const TextBody12(
-      this.text, {
-        super.key,
-        this.textAlign,
-        this.fontSize,
-        this.fontWeight,
-        this.color,
-        this.overflow,
-      });
+    this.text, {
+    super.key,
+    this.textAlign,
+    this.fontSize,
+    this.fontWeight,
+    this.color,
+    this.overflow,
+  });
 
   final String text;
   final FontWeight? fontWeight;
@@ -96,7 +95,7 @@ class TextBody12 extends StatelessWidget {
         fontWeight: fontWeight ?? FontWeight.normal,
         fontSize: fontSize ?? 12.sp,
         color: color,
-fontFamily: 'Poppins',
+        fontFamily: 'Poppins',
       ),
       maxLines: 1,
       softWrap: false,
@@ -108,14 +107,14 @@ fontFamily: 'Poppins',
 
 class TextDescription extends StatelessWidget {
   const TextDescription(
-      this.text, {
-        super.key,
-        this.textAlign,
-        this.fontSize,
-        this.fontWeight,
-        this.color,
-        this.overflow,
-      });
+    this.text, {
+    super.key,
+    this.textAlign,
+    this.fontSize,
+    this.fontWeight,
+    this.color,
+    this.overflow,
+  });
 
   final String text;
   final FontWeight? fontWeight;
@@ -136,7 +135,6 @@ class TextDescription extends StatelessWidget {
       ),
       textAlign: textAlign ?? TextAlign.start,
       overflow: overflow,
-
     );
   }
 }

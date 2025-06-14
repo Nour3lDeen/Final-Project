@@ -1,0 +1,30 @@
+description: Ultralytics pest model trained on /kaggle/working/yolo_dataset/dataset.yaml
+author: Ultralytics
+date: '2025-06-01T11:21:46.859781'
+version: 8.3.122
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: grasshoppers
+  1: butterfly
+  2: cicada
+  3: dragonfly
+  4: spider
+  5: snail
+  6: scorpion
+  7: bees
+  8: moth
+  9: beetle
+args:
+  batch: 1
+  fraction: 1.0
+  half: false
+  int8: false
+  nms: false
+channels: 3

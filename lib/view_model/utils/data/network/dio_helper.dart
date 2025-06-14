@@ -1,0 +1,128 @@
+import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import '../local/shared_helper.dart';
+import '../local/shared_keys.dart';
+import 'endpoints.dart';
+
+class DioHelper {
+  static final Dio _dio = Dio(BaseOptions(
+    baseUrl: EndPoints.baseUrl,
+
+    receiveDataWhenStatusError: true,
+    headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+  ))..interceptors.add(PrettyDioLogger(
+      requestHeader: true,
+      requestBody: true,
+      filter: (options, args){
+        // don't print requests with uris containing '/posts'
+        if(options.path.contains('/posts')){
+          return false;
+        }
+        // don't print responses with unit8 list data
+        return !args.isResponse || !args.hasUint8ListData;
+      }
+  )
+  );
+
+  static Future<Response> get({
+    required String path,
+    Map<String, dynamic>? body,
+    Map<String, dynamic>? queryParameters,
+    bool? withToken = false,
+  }) async {
+    try {
+      if (withToken!) {
+        _dio.options.headers.addAll({
+          'Authorization': 'Bearer ${SharedHelper.getData(SharedKeys.token)}',
+        });
+      }
+      Response response =
+      await _dio.get(path, data: body, queryParameters: queryParameters);
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<Response> post({
+    required String path,
+    dynamic body,
+    Map<String, dynamic>? queryParameters,
+    bool? withToken = false,
+
+  }) async {
+    try {
+      if (withToken!) {
+        _dio.options.headers.addAll({
+          'Authorization': 'Bearer ${SharedHelper.getData(SharedKeys.token)}',
+        });
+      }
+      Response response =
+      await _dio.post(path, data: body, queryParameters: queryParameters);
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<Response> put({
+    required String path,
+    dynamic body,
+    Map<String, dynamic>? queryParameters,
+    bool? withToken = false,
+  }) async {
+    try {
+      if (withToken!) {
+        _dio.options.headers.addAll({
+          'Authorization': 'Bearer ${SharedHelper.getData(SharedKeys.token)}',
+        });
+      }
+      Response response =
+      await _dio.put(path, data: body, queryParameters: queryParameters);
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<Response> patch({
+    required String path,
+    Map<String, dynamic>? body,
+    Map<String, dynamic>? queryParameters,
+    bool? withToken = false,
+  }) async {
+    try {
+      if (withToken!) {
+        _dio.options.headers.addAll({
+          'Authorization': 'Bearer ${SharedHelper.getData(SharedKeys.token)}',
+        });
+      }
+      Response response =
+      await _dio.patch(path, data: body, queryParameters: queryParameters);
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<Response> delete({
+    required String path,
+    Map<String, dynamic>? body,
+    Map<String, dynamic>? queryParameters,
+    bool? withToken = false,
+  }) async {
+    try {
+      if (withToken!) {
+        _dio.options.headers.addAll({
+          'Authorization': 'Bearer ${SharedHelper.getData(SharedKeys.token)}',
+        });
+      }
+      Response response =
+      await _dio.delete(path, data: body, queryParameters: queryParameters);
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+}

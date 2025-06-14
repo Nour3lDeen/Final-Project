@@ -11,7 +11,8 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
-
+.env
+lib/view_model/utils/data/network/endpoints.dart
 # IntelliJ related
 *.iml
 *.ipr

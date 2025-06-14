@@ -1,4 +1,4 @@
-import 'package:final_project/view_model/cubits/auth_cubit.dart';
+import 'package:final_project/view_model/cubits/auth/auth_cubit.dart';
 import 'package:final_project/view_model/utils/Texts/Texts.dart';
 import 'package:final_project/view_model/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -41,8 +41,8 @@ class OtpScreen extends StatelessWidget {
                     fontSize: 22.sp,
                     color: HexColor('#374151'),
                   ),
-                  TextBody14('Code has been send to johndoe@gmail.com.'),
-                  TextBody14('Enter the code to reset your password.'),
+                  const TextBody14('Code has been send to nourgemy54@gmail.com.'),
+                  const TextBody14('Enter the code to reset your password.'),
                   CustomTextFormField(
                     title: 'Otp code',
                     titleColor: HexColor('#1B1F1E'),
@@ -57,7 +57,7 @@ class OtpScreen extends StatelessWidget {
                       }
                       return null;
                     },
-                    suffixIcon: Icon(Icons.email),
+                    suffixIcon: const Icon(Icons.email),
                     obscureText: false,
                   ),
                   Row(
@@ -76,7 +76,7 @@ class OtpScreen extends StatelessWidget {
 
                           return Column(
                             children: [
-                              const TextBody12('الوقت المتبقي '),
+                              const TextBody12('Reset Timer in '),
                               TextBody12('$hours:$minutes:$seconds'),
                               // Display formatted time
                             ],

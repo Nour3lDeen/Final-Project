@@ -66,7 +66,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxHeight: 45,
       ),
       child: TextFormField(
@@ -88,7 +88,6 @@ class CustomTextField extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
             borderSide: const BorderSide(
-              width: 1,
               color: Colors.teal,
             ),
           ),

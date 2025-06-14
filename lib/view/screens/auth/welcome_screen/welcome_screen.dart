@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
-import '../../../../view_model/cubits/auth_cubit.dart';
+import '../../../../view_model/cubits/auth/auth_cubit.dart';
 import '../login_form/login_form.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -16,10 +16,14 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColors.white,
+        extendBody: true,
+        resizeToAvoidBottomInset: false,
+        extendBodyBehindAppBar: true,
+
         body: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           child: BlocBuilder<AuthCubit, AuthState>(
             builder: (context, state) {
               final authCubit = AuthCubit.get(context);
@@ -30,7 +34,7 @@ class WelcomeScreen extends StatelessWidget {
                     height: 200.h,
                     padding:
                         EdgeInsets.only(right: 16.w, left: 16.w, top: 50.h),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
                           AppAssets.background,
@@ -59,7 +63,7 @@ class WelcomeScreen extends StatelessWidget {
                         TextDescription(
                           authCubit.currentIndex == 0
                               ? 'Enter your email and password to log in '
-                              : 'Create an account or log in to explore about our app',
+                              : 'Create an account to explore about our app',
                           color: AppColors.white,
                           overflow: TextOverflow.ellipsis,
                           fontSize: 12.sp,
@@ -72,7 +76,6 @@ class WelcomeScreen extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       height: 490.h,
-                      clipBehavior: Clip.none,
                       padding:
                           EdgeInsets.only(right: 16.w, left: 16.w, top: 16.h),
                       decoration: BoxDecoration(
@@ -88,7 +91,6 @@ class WelcomeScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              clipBehavior: Clip.none,
                               width: double.infinity,
                               padding: EdgeInsets.only(top: 4.h, bottom: 4.h),
                               decoration: BoxDecoration(
@@ -113,7 +115,7 @@ class WelcomeScreen extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(12.r),
                                       ),
-                                      child: Center(
+                                      child: const Center(
                                           child: TextBody14(
                                         'Login',
                                       ))),
@@ -126,17 +128,17 @@ class WelcomeScreen extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(12.r),
                                       ),
-                                      child: Center(
+                                      child: const Center(
                                           child: TextBody14(
                                         'Sign Up',
                                       ))),
                                 ],
                               ),
                             ),
-                            Expanded(
+                            const Expanded(
                               child: TabBarView(
                                 physics: NeverScrollableScrollPhysics(),
-                                children: [LoginForm(), RegisterForm()],
+                                children: [const LoginForm(), RegisterForm()],
                               ),
                             ),
                           ],

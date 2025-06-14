@@ -1,5 +1,5 @@
 import 'package:final_project/view/screens/auth/otp_screen/otp_screen.dart';
-import 'package:final_project/view_model/cubits/auth_cubit.dart';
+import 'package:final_project/view_model/cubits/auth/auth_cubit.dart';
 import 'package:final_project/view_model/utils/Texts/Texts.dart';
 import 'package:final_project/view_model/utils/app_assets/app_assets.dart';
 import 'package:final_project/view_model/utils/app_colors/app_colors.dart';
@@ -45,7 +45,7 @@ class ForgetPassword extends StatelessWidget {
                     fontSize: 22.sp,
                     color: HexColor('#374151'),
                   ),
-                  TextBody14('Enter your registered email below'),
+                  const TextBody14('Enter your registered email below'),
                   CustomTextFormField(
                     title: 'Email',
                     titleColor: HexColor('#1B1F1E'),
@@ -60,7 +60,7 @@ class ForgetPassword extends StatelessWidget {
                       }
                       return null;
                     },
-                    suffixIcon: Icon(Icons.email),
+                    suffixIcon: const Icon(Icons.email),
                     obscureText: false,
                   ),
                   InkWell(
